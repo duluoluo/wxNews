@@ -39,9 +39,6 @@ public class GlideImgManager implements ImageLoaderInterface {
         //原生 API  
         Glide.with(context).load(url)
                 .placeholder(R.color.white)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .centerCrop()
-                .crossFade()
                 .into(iv);
     }
 
