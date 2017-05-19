@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:su="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal" >
+
+    <com.yusong.community.utils.city.ScrollerNumberPicker
+        android:id="@+id/province"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        su:itemNumber="5"
+        su:lineColor="@color/blue2"
+        su:maskHight="25dp"
+        su:noEmpty="true"
+        su:normalTextColor="@color/gray6"
+        su:normalTextSize="14sp"
+        su:selecredTextColor="@color/black1"
+        su:selecredTextSize="20sp"
+        su:unitHight="40dp" />
+
+    <com.yusong.community.utils.city.ScrollerNumberPicker
+        android:id="@+id/city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        su:itemNumber="5"
+        su:lineColor="@color/blue2"
+        su:maskHight="25dp"
+        su:noEmpty="true"
+        su:normalTextColor="@color/gray6"
+        su:normalTextSize="14sp"
+        su:selecredTextColor="@color/black1"
+        su:selecredTextSize="20sp"
+        su:unitHight="40dp" />
+
+    <com.yusong.community.utils.city.ScrollerNumberPicker
+        android:id="@+id/couny"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        su:itemNumber="5"
+        su:lineColor="@color/blue2"
+        su:maskHight="25dp"
+        su:noEmpty="true"
+        su:normalTextColor="@color/gray6"
+        su:normalTextSize="14sp"
+        su:selecredTextColor="@color/black1"
+        su:selecredTextSize="20sp"
+        su:unitHight="40dp" />
+</LinearLayout>

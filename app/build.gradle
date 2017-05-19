@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi-v7a', 'arm64-v8a'//, 'x86', , 'x86_64',,
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+
+        release {
+        }
+
+        debug {
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+    provided rootProject.ext.dependencies["javax.annotation"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    compile project(':WxAndroidCommon')
+    compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["cardview"]
+    compile rootProject.ext.dependencies["photoView"]
+    compile rootProject.ext.dependencies["coordinatortablayout"]
+}
