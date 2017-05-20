@@ -3,6 +3,7 @@ package com.wxandroid.common.base;
 
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -34,11 +35,22 @@ public class WebViewActivity extends BaseActivity {
         int color = getIntent().getExtras().getInt("color");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle(title);
         toolbar.setBackgroundResource(color);
         imageView.setBackgroundResource(color);
         initWebView();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     protected void initInject() {

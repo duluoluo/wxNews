@@ -24,10 +24,10 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        initInject();
         if (mPresenter != null) {
             mPresenter.setView(this);
         }
-        initInject();
         if (null == mFragmentView) {
             mFragmentView = View.inflate(getActivity(), getLayoutId(), null);
             bind = ButterKnife.bind(this, mFragmentView);

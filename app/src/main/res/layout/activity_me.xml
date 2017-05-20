@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200px"
+        android:src="@mipmap/wenxin" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  感谢大佬的"
+            android:textSize="34px" />
+
+        <TextView
+            android:id="@+id/tv_MVPArms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MVPArms"
+            android:textColor="@color/color_blue"
+            android:textSize="34px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="让我从中学习了很多"
+            android:textSize="34px" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:text="同时感谢代码家提供的免费接口。"
+        android:textSize="34px" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="20px"
+        android:text="希望看到此项目的同学能有所收获，如果有好的建议欢迎issue，共同进步！"
+        android:textSize="34px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:text="如果该项目对您有帮助，帮忙点个star吧O(∩_∩)O"
+        android:textSize="34px" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="40px"
+        android:gravity="right"
+        android:text="文新"
+        android:textSize="34px" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:gravity="right"
+        android:text="yangwenxin711@gmail.com"
+        android:textSize="34px" />
+
+
+    <TextView
+        android:id="@+id/tv_wxNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:gravity="right"
+        android:text=" https://github.com/yangwenxin/wxNews"
+        android:textColor="@color/color_blue"
+        android:textSize="34px" />
+</LinearLayout>

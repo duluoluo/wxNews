@@ -1,5 +1,6 @@
 package com.quaner.wxnews.ui.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -50,12 +51,13 @@ public class MainActivity extends WXActivity {
         mImageArray = new int[]{
                 R.mipmap.bg,
                 R.mipmap.bg_android,
-                R.mipmap.bg_other,
-                R.mipmap.bg_js};
+                R.mipmap.bg_other
+        };
         mColorArray = new int[]{
                 R.color.pink,
                 android.R.color.holo_blue_light,
-                android.R.color.holo_red_light,};
+                android.R.color.holo_red_light
+        };
 
         coordinatortablayout.setTitle("wxNews")
                 .setBackEnable(true)
@@ -75,7 +77,7 @@ public class MainActivity extends WXActivity {
 
         switch (item.getItemId()) {
             case R.id.about_me:
-
+                startActivity(new Intent(MainActivity.this, MeActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
