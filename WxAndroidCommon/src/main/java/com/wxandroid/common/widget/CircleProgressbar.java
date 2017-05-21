@@ -16,9 +16,7 @@ import android.widget.TextView;
 
 import com.wxandroid.common.R;
 
-/**
- * Created by wenxin
- */
+
 public class CircleProgressbar extends TextView {
 
     //外部轮廓的颜色

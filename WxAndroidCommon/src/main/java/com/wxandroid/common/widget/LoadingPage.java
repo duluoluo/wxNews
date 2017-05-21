@@ -15,7 +15,9 @@ import static com.wxandroid.common.utils.Constants.STATE_EMPTY;
 import static com.wxandroid.common.utils.Constants.STATE_LOADING;
 import static com.wxandroid.common.utils.Constants.STATE_SUCCESS;
 
-
+/**
+ * Created by wenxin
+ */
 public abstract class LoadingPage extends FrameLayout {
 
     public int state = STATE_LOADING;// 默认加载中的状态
