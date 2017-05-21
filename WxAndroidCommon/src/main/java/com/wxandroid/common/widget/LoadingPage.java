@@ -2,13 +2,12 @@ package com.wxandroid.common.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.wxandroid.common.R;
 import com.wxandroid.common.CommonApplication;
+import com.wxandroid.common.R;
 import com.wxandroid.common.utils.Constants;
 
 import static com.wxandroid.common.utils.Constants.STATE_EMPTY;
@@ -21,15 +20,11 @@ import static com.wxandroid.common.utils.Constants.STATE_SUCCESS;
 public abstract class LoadingPage extends FrameLayout {
 
     public int state = STATE_LOADING;// 默认加载中的状态
-
-
     private View loadingView;// 加载中的界面
     private View errorView;// 加载失败的界面
     private View emptyView;// 加载为空的界面
 
     public View successView;// 加载成功的界面
-
-    private Context mContext;
 
     public LoadingPage(Context context) {
         super(context);
@@ -113,7 +108,6 @@ public abstract class LoadingPage extends FrameLayout {
         return view;
     }
 
-    float downY;
 
     /**
      * 创建加载失败的view
@@ -129,14 +123,6 @@ public abstract class LoadingPage extends FrameLayout {
                 state = Constants.STATE_LOADING;
                 showPage();
                 loadData();
-            }
-        });
-        view.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-
-                return false;
             }
         });
         return view;
