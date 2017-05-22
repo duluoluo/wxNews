@@ -16,45 +16,6 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <!--主页RadioButton的样式-->
-    <style name="sytle_RadioButton">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@null</item>
-        <item name="android:button">@null</item>
-        <item name="android:drawablePadding">3dp</item>
-        <item name="android:gravity">center</item>
-    </style>
 
-    <style name="RadioButtonRight">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:textColor">@drawable/radiobutton_text_color</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">2px</item>
-        <item name="android:layout_marginBottom">2px</item>
-        <item name="android:layout_marginRight">2px</item>
-        <item name="android:button">@null</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:background">@drawable/radiobutton_right</item>
-    </style>
-
-    <style name="RadioButtonLeft">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:textColor">@drawable/radiobutton_text_color</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">2px</item>
-        <item name="android:layout_marginBottom">2px</item>
-        <item name="android:layout_marginLeft">2px</item>
-        <item name="android:button">@null</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:background">@drawable/radiobutton_left</item>
-    </style>
 
 </resources>
