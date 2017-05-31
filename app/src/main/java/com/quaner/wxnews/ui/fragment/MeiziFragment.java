@@ -94,6 +94,7 @@ public class MeiziFragment extends WXLoadingFragment<MeiziPresenterImpl>
             mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
             mAdapter.setNewData(results);
             mAdapter.setEnableLoadMore(false);
+            mAdapter.setOnLoadMoreListener(this, rlContent);
             mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -161,13 +162,14 @@ public class MeiziFragment extends WXLoadingFragment<MeiziPresenterImpl>
     public void setData(List<GankEntity> results) {
         hideLoading();
         mAdapter.setNewData(results);
-        mAdapter.setOnLoadMoreListener(this, rlContent);
+        mAdapter.disableLoadMoreIfNotFullPage(rlContent);
     }
 
     @Override
     public void addData(List<GankEntity> results) {
         hideLoading();
         mAdapter.addData(results);
+        mAdapter.disableLoadMoreIfNotFullPage(rlContent);
     }
 
 
