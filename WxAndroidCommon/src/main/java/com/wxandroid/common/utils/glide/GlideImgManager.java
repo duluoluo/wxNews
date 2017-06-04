@@ -38,7 +38,7 @@ public class GlideImgManager implements ImageLoaderInterface {
     public static void loadImage(Context context, String url, ImageView iv) {
         //原生 API  
         Glide.with(context).load(url)
-                .placeholder(R.drawable.pic_gray_bg)
+                .placeholder(R.color.white)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(iv);
     }

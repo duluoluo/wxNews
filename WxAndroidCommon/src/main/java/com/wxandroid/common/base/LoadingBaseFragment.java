@@ -143,18 +143,20 @@ public abstract class LoadingBaseFragment<P extends BasePresenterImpl> extends F
     @Override
     public void onDetach() {
         super.onDetach();
+
+        if (bind != null) {
+            bind.unbind();
+        }
+        if (mPresenter != null) {
+            mPresenter.onDestroy();
+        }
+
         if (null != mScrollView) {
             ViewParent parent = mScrollView.getParent();
             if (parent != null && parent instanceof ViewGroup) {
                 ViewGroup group = (ViewGroup) parent;
                 group.removeView(mScrollView);
             }
-        }
-        if (bind != null) {
-            bind.unbind();
-        }
-        if (mPresenter != null) {
-            mPresenter.onDestroy();
         }
     }
 

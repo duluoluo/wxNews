@@ -42,4 +42,5 @@ dependencies {
     compile rootProject.ext.dependencies["cardview"]
     compile rootProject.ext.dependencies["photoView"]
     compile rootProject.ext.dependencies["coordinatortablayout"]
+    compile 'com.zxy.android:tiny:0.0.6'
 }
