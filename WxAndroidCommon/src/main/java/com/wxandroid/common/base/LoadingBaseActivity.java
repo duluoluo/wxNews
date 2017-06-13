@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.http.Stateful;
+import com.wxandroid.common.mvp.BasePresenter;
 import com.wxandroid.common.widget.LoadingPage;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -21,7 +22,7 @@ import butterknife.Unbinder;
 /**
  * Created by wenxin
  */
-public abstract class LoadingBaseActivity<P extends BasePresenterImpl> extends AutoLayoutActivity implements Stateful {
+public abstract class LoadingBaseActivity<P extends BasePresenter> extends AutoLayoutActivity implements Stateful {
 
     @Inject
     protected P mPresenter;
@@ -38,9 +39,6 @@ public abstract class LoadingBaseActivity<P extends BasePresenterImpl> extends A
         setContentView(layoutId());
         super.onCreate(savedInstanceState);
         initInject();
-        if (mPresenter != null) {
-            mPresenter.setView(this);
-        }
         initView();
         fl_content = (FrameLayout) findViewById(setFrameLayoutId());
         if (mLoadingPage == null) {

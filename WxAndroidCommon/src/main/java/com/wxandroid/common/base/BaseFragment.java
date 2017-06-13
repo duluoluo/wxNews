@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wxandroid.common.mvp.BasePresenter;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
@@ -15,7 +17,7 @@ import butterknife.Unbinder;
 /**
  * Created by wenxin
  */
-public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     @Inject
     protected P mPresenter;
     public View mFragmentView;
@@ -25,9 +27,6 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         initInject();
-        if (mPresenter != null) {
-            mPresenter.setView(this);
-        }
         if (null == mFragmentView) {
             mFragmentView = View.inflate(getActivity(), getLayoutId(), null);
             bind = ButterKnife.bind(this, mFragmentView);

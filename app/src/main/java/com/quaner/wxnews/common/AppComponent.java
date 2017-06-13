@@ -1,7 +1,7 @@
 package com.quaner.wxnews.common;
 
-import com.quaner.wxnews.http.module.ServiceModule;
 import com.quaner.wxnews.http.utils.ServiceManager;
+import com.quaner.wxnews.inject.module.ServiceModule;
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.injector.module.AppModule;
 import com.wxandroid.common.injector.module.HttpModule;

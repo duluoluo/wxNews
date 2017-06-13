@@ -3,8 +3,8 @@ package com.wxandroid.common.injector.module;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.wxandroid.common.CommonApplication;
-import com.wxandroid.common.http.utils.GlobeHttpHandler;
-import com.wxandroid.common.http.utils.RequestIntercept;
+import com.wxandroid.common.http.GlobeHttpHandler;
+import com.wxandroid.common.http.RequestIntercept;
 import com.wxandroid.common.utils.Constants;
 
 import java.io.File;
@@ -27,7 +27,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.wxandroid.common.http.utils.GlobeHttpHandler.globeHttpHandler;
+import static com.wxandroid.common.http.GlobeHttpHandler.globeHttpHandler;
 
 /**
  * Created by wenxin

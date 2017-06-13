@@ -15,8 +15,6 @@ public class Constants {
     public static final int STATE_EMPTY = 3;
     public static final int STATE_SUCCESS = 4;
 
-    public static final int OK = 0;
-
     public static final int INIT = 0;
     public static final int ADD = 1;
 

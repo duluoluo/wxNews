@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.http.Stateful;
+import com.wxandroid.common.mvp.BasePresenter;
 import com.wxandroid.common.widget.LoadingPage;
 
 import javax.inject.Inject;
@@ -24,7 +25,7 @@ import butterknife.Unbinder;
 /**
  * Created by wenxin
  */
-public abstract class LoadingBaseFragment<P extends BasePresenterImpl> extends Fragment implements Stateful {
+public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragment implements Stateful {
     @Inject
     protected P mPresenter;
 
@@ -81,9 +82,6 @@ public abstract class LoadingBaseFragment<P extends BasePresenterImpl> extends F
                             ViewGroup.LayoutParams.MATCH_PARENT));
         }
         initInject();
-        if (mPresenter != null) {
-            mPresenter.setView(this);
-        }
         if (successView != null) {
             bind = ButterKnife.bind(this, successView);
         }

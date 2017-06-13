@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.WindowManager;
 
+import com.wxandroid.common.mvp.BasePresenter;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by wenxin
  */
-public abstract class BaseActivity<P extends BasePresenterImpl> extends AutoLayoutActivity {
+public abstract class BaseActivity<P extends BasePresenter> extends AutoLayoutActivity {
 
     @Inject
     protected P mPresenter;
@@ -30,9 +31,6 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AutoLayo
         setContentView(layoutId());
         super.onCreate(savedInstanceState);
         initInject();
-        if (mPresenter != null) {
-            mPresenter.setView(this);
-        }
         ButterKnife.bind(this);
         init();
     }

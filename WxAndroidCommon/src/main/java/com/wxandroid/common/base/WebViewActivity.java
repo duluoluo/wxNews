@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import com.wxandroid.common.R;
-import com.wxandroid.common.http.utils.ProgressDialogHandler;
+import com.wxandroid.common.utils.ProgressDialogHandler;
 import com.wxandroid.common.widget.autolayout.AutoToolbar;
 
 public class WebViewActivity extends BaseActivity {
