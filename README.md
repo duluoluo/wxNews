@@ -1,5 +1,5 @@
 # wxNews
-![](https://raw.githubusercontent.com/yangwenxin/wxNews/master/80.pic.jpg) ![](https://raw.githubusercontent.com/yangwenxin/wxNews/master/82.pic.jpg)
+![](https://github.com/yangwenxin/wxNews/blob/master/1.gif) ![](https://github.com/yangwenxin/wxNews/blob/master/2.gif)
 
 
 一款基于 Material Design + Rxjava2 + Retrofit + dagger2 + MVP 构架项目<br>
