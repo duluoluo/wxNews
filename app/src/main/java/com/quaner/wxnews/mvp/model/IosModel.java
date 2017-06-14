@@ -26,7 +26,7 @@ public class IosModel extends BaseModel implements IosContract.Model {
         mServiceManager = serviceManager;
     }
 
-
+    @Override
     public Observable<HttpResult<List<GankEntity>>> getIosData(String type, int page){
 
         return mServiceManager.getCommonService().getCommonData(type,page);

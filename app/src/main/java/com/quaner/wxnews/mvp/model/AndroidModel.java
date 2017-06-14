@@ -26,7 +26,7 @@ public class AndroidModel extends BaseModel implements AndroidContract.Model {
         mServiceManager = serviceManager;
     }
 
-
+    @Override
     public Observable<HttpResult<List<GankEntity>>> getAndroidData(String type, int page){
 
         return mServiceManager.getCommonService().getCommonData(type,page);
