@@ -14,7 +14,7 @@ import com.quaner.wxnews.mvp.ui.fragment.IosFragment;
 import com.quaner.wxnews.mvp.ui.fragment.MeiZiFragment;
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.base.BaseActivity;
-import com.wxandroid.common.base.BaseDialog;
+import com.wxandroid.common.widget.Dialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
     private int[] mColorArray;
     private List<Fragment> mFragments = new ArrayList();
     private final String[] mTitles = {"妹纸", "Android", "iOS"};
-    private BaseDialog baseDialog;
+    private Dialog baseDialog;
 
 
     @Override
@@ -103,7 +103,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        baseDialog = new BaseDialog(this)
+        baseDialog = new Dialog(this)
                 .setTitle("提示")
                 .setMessage("您确定要退出应用吗？")
                 .setNegativeButton("取消", new View.OnClickListener() {

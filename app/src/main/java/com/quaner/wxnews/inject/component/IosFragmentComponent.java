@@ -1,7 +1,6 @@
 package com.quaner.wxnews.inject.component;
 
 
-import com.quaner.wxnews.common.AppComponent;
 import com.quaner.wxnews.inject.module.IosModule;
 import com.quaner.wxnews.mvp.ui.fragment.IosFragment;
 import com.wxandroid.common.injector.scope.FragmentScope;

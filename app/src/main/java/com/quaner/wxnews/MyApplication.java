@@ -1,7 +1,7 @@
 package com.quaner.wxnews;
 
 
-import com.quaner.wxnews.common.AppComponent;
+import com.quaner.wxnews.inject.component.AppComponent;
 import com.quaner.wxnews.common.DaggerAppComponent;
 import com.quaner.wxnews.inject.module.ServiceModule;
 import com.wxandroid.common.CommonApplication;

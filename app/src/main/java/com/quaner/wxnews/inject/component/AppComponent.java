@@ -1,4 +1,4 @@
-package com.quaner.wxnews.common;
+package com.quaner.wxnews.inject.component;
 
 import com.quaner.wxnews.http.utils.ServiceManager;
 import com.quaner.wxnews.inject.module.ServiceModule;
