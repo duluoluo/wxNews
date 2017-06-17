@@ -7,7 +7,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.http.Stateful;
 import com.wxandroid.common.mvp.BasePresenter;
 import com.wxandroid.common.widget.LoadingPage;
@@ -61,7 +60,6 @@ public abstract class LoadingBaseActivity<P extends BasePresenter> extends AutoL
             };
         }
         fl_content.addView(mLoadingPage);
-        CommonApplication.addActivity(this);
         loadData();
     }
 

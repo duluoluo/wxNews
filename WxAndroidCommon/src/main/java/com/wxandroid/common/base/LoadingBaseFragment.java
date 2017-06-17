@@ -1,6 +1,5 @@
 package com.wxandroid.common.base;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -75,8 +74,6 @@ public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragm
                     return LoadingBaseFragment.this.getLayoutId();
                 }
             };
-            mScrollView.setBackgroundColor(Color.parseColor("#ffffff"));
-            mLoadingPage.setBackgroundColor(Color.parseColor("#ffffff"));
             mScrollView.addView(mLoadingPage,
                     new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.MATCH_PARENT));
@@ -161,7 +158,6 @@ public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragm
     @Override
     public void setState(int state) {
         if (mLoadingPage != null) {
-
             mLoadingPage.state = state;
             mLoadingPage.showPage();
         }
