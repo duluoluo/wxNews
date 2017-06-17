@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.quaner.wxnews.inject.component.AppComponent;
-import com.quaner.wxnews.common.DaggerAppComponent;
+import com.quaner.wxnews.inject.component.DaggerAppComponent;
 import com.quaner.wxnews.inject.module.ServiceModule;
 import com.wxandroid.common.CommonApplication;
 
