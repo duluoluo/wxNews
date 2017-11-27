@@ -41,14 +41,9 @@ public class BasePresenter<M extends IModel, V extends IView> implements IPreset
 
 
     //loadingPage
-    protected <T> void LoadingInvoke(Observable<T> observable, Callback<T> callback) {
+    protected <T> void invoke(Observable<T> observable, Callback<T> callback) {
         callback.setTarget((Stateful) mView);
         HttpUtils.invoke((Stateful) mView, observable, callback);
-    }
-
-    //dialog  New Callback(mContext);
-    protected <T> void invoke(Observable<T> observable, Callback<T> callback) {
-        HttpUtils.invoke(null, observable, callback);
     }
 
     /**

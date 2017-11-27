@@ -5,10 +5,10 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 
-import com.wxandroid.common.injector.component.BaseComponent;
-import com.wxandroid.common.injector.component.DaggerBaseComponent;
-import com.wxandroid.common.injector.module.AppModule;
-import com.wxandroid.common.injector.module.HttpModule;
+import com.wxandroid.common.di.component.BaseComponent;
+import com.wxandroid.common.di.component.DaggerBaseComponent;
+import com.wxandroid.common.di.module.AppModule;
+import com.wxandroid.common.di.module.HttpModule;
 
 import java.io.File;
 import java.util.LinkedList;

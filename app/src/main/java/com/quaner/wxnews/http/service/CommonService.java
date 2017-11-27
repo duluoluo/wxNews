@@ -1,7 +1,7 @@
 package com.quaner.wxnews.http.service;
 
 
-import com.quaner.wxnews.mvp.ui.entity.GankEntity;
+import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.http.HttpResult;
 
 import java.util.List;

@@ -6,11 +6,11 @@ import android.support.annotation.NonNull;
 
 import com.quaner.wxnews.mvp.contract.MeiZiContract;
 import com.quaner.wxnews.mvp.model.MeiZiModel;
-import com.quaner.wxnews.mvp.ui.entity.GankEntity;
+import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.http.Callback;
 import com.wxandroid.common.http.HttpResult;
-import com.wxandroid.common.injector.scope.FragmentScope;
+import com.wxandroid.common.di.scope.FragmentScope;
 import com.wxandroid.common.mvp.BasePresenter;
 import com.wxandroid.common.utils.AppUtils;
 import com.wxandroid.common.utils.Constants;
@@ -42,7 +42,7 @@ public class MeiziPresenter extends BasePresenter<MeiZiModel, MeiZiContract.View
     public void getMeiziData(String type, final int page, final int flag) {
         //获取妹子数据
 
-        LoadingInvoke(mModel.getMeiziData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
+        invoke(mModel.getMeiziData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
             @Override
             protected void subscribe(Disposable d) {
                 addSubscribe(d);

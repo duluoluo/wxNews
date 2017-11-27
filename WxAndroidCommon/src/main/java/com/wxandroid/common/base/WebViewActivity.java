@@ -129,7 +129,7 @@ public class WebViewActivity extends BaseActivity {
 
     private void showProgressDialog() {
         if (mHandler != null) {
-            mHandler.obtainMessage(ProgressDialogHandler.SHOW_PROGRESS_DIALOG).sendToTarget();
+            mHandler.obtainMessage(ProgressDialogHandler.SHOW_MSG_DIALOG).sendToTarget();
         }
     }
 

@@ -11,6 +11,8 @@ import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import android.util.SparseLongArray;
 
+import com.wxandroid.common.CommonApplication;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -295,5 +297,12 @@ public class AppUtils {
         }
     }
 
+    public static String ls(int id) {
+        return CommonApplication.getContext().getResources().getString(id);
+    }
+
+    public static String ls(int id, Object... strings) {
+        return CommonApplication.getContext().getResources().getString(id, strings);
+    }
 
 }

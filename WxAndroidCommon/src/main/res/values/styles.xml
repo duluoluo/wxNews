@@ -1,21 +1,24 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowIsTranslucent">false</item>
-        <item name="android:windowBackground">@color/white</item>
-    </style>
-    
-    <style name="BaseDialog" parent="android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/transparency</item>
-        <item name="android:windowIsFloating">true</item>
+        Customize your theme here.
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="colorAccent">@color/main_color</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@android:color/white</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="alertDialogTheme">@style/AppThemeDialogAlert</item>
     </style>
 
+    <style name="AppSplash" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
+    <style name="AppThemeDialogAlert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="colorAccent">@color/main_color</item>
+    </style>
 </resources>

@@ -2,7 +2,7 @@ package com.quaner.wxnews.mvp.presenter;
 
 import com.quaner.wxnews.mvp.contract.IosContract;
 import com.quaner.wxnews.mvp.model.IosModel;
-import com.quaner.wxnews.mvp.ui.entity.GankEntity;
+import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.http.Callback;
 import com.wxandroid.common.http.HttpResult;
 import com.wxandroid.common.mvp.BasePresenter;
@@ -28,7 +28,7 @@ public class IosPresenter extends BasePresenter<IosModel, IosContract.View> {
 
     public void getIosDatas(String type, final int page, final int flag) {
 
-        LoadingInvoke(mModel.getIosData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
+        invoke(mModel.getIosData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
             @Override
             protected void subscribe(Disposable d) {
                 addSubscribe(d);

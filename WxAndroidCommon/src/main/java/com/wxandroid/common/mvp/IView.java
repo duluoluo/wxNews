@@ -1,21 +1,23 @@
 package com.wxandroid.common.mvp;
 
+import android.content.Context;
 import android.content.Intent;
 
 /**
- * Created by hasee on 2017/4/17.
+ * Created by wenxin on 2017/11/27.
  */
 
 public interface IView {
 
-    /**
-     * 跳转activity
-     */
     void launchActivity(Intent intent);
 
-    /**
-     * 杀死自己
-     */
     void killMyself();
 
+    void showLoading(String msg);
+
+    void showLoading(int id);
+
+    void hideLoading();
+
+    Context getCtx();
 }

@@ -1,7 +1,7 @@
 package com.quaner.wxnews.mvp.contract;
 
 
-import com.quaner.wxnews.mvp.ui.entity.GankEntity;
+import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.http.HttpResult;
 import com.wxandroid.common.mvp.IModel;
 import com.wxandroid.common.mvp.IView;

@@ -1,10 +1,12 @@
 package com.wxandroid.common.http;
 
-import android.content.Context;
+import android.os.Bundle;
+import android.os.Message;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
-import com.wxandroid.common.utils.LogUtils;
+import com.wxandroid.common.mvp.IView;
 import com.wxandroid.common.utils.Constants;
+import com.wxandroid.common.utils.LogUtils;
 import com.wxandroid.common.utils.ProgressDialogHandler;
 import com.wxandroid.common.utils.ToastUtils;
 
@@ -17,11 +19,12 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by wenxin
- * contact with yangwenxin711@gmail.com
  */
 public abstract class Callback<T> implements Observer<T> {
 
-    private Context mContext;
+    private IView view;
+    private String msg;
+    private int id = -1;
     public ProgressDialogHandler mHandler;
     private Stateful target;
 
@@ -29,9 +32,17 @@ public abstract class Callback<T> implements Observer<T> {
 
     }
 
-    public Callback(Context context) {
-        this.mContext = context;
-        mHandler = new ProgressDialogHandler(context);
+
+    public Callback(IView view, String msg) {
+        this.view = view;
+        this.msg = msg;
+        mHandler = new ProgressDialogHandler(view);
+    }
+
+    public Callback(IView view, int id) {
+        this.view = view;
+        this.id = id;
+        mHandler = new ProgressDialogHandler(view);
     }
 
     public void setTarget(Stateful target) {
@@ -51,20 +62,29 @@ public abstract class Callback<T> implements Observer<T> {
         }
 
         setState(Constants.STATE_ERROR);
-        LogUtils.e("出错了大兄弟 -------------- " + e.toString());
+        LogUtils.e("onError" + e.toString());
         onFailure();
-        dismissProgressDialog();
+        if (view != null) {
+            hideLoading();
+        }
     }
 
     @Override
     public void onSubscribe(Disposable d) {
-        showProgressDialog();
+        if (view != null) {
+            if (id == -1)
+                showLoading(msg);
+            else
+                showLoading(id);
+        }
         subscribe(d);
     }
 
     @Override
     public void onComplete() {
-        dismissProgressDialog();
+        if (view != null) {
+            hideLoading();
+        }
     }
 
     @Override
@@ -76,17 +96,28 @@ public abstract class Callback<T> implements Observer<T> {
         }
     }
 
-    private void showProgressDialog() {
-        if (mHandler != null) {
-            mHandler.obtainMessage(ProgressDialogHandler.SHOW_PROGRESS_DIALOG).sendToTarget();
-        }
+
+    private void showLoading(int id) {
+        Message message = mHandler.obtainMessage(ProgressDialogHandler.SHOW_ID_DIALOG);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", id);
+        message.setData(bundle);
+        message.sendToTarget();
     }
 
-    private void dismissProgressDialog() {
-        if (mHandler != null) {
-            mHandler.obtainMessage(ProgressDialogHandler.DISMISS_PROGRESS_DIALOG).sendToTarget();
-            mHandler = null;
-        }
+    private void showLoading(String msg) {
+        Message message = mHandler.obtainMessage(ProgressDialogHandler.SHOW_MSG_DIALOG);
+        Bundle bundle = new Bundle();
+        bundle.putString("msg", msg);
+        message.setData(bundle);
+        message.sendToTarget();
+    }
+
+
+    private void hideLoading() {
+        mHandler.obtainMessage(ProgressDialogHandler.DISMISS_PROGRESS_DIALOG).sendToTarget();
+        mHandler = null;
+        view = null;
     }
 
     public void setState(int state) {

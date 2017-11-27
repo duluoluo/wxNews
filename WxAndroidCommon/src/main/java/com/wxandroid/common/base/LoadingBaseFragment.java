@@ -1,5 +1,7 @@
 package com.wxandroid.common.base;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,7 @@ import android.widget.FrameLayout;
 import com.wxandroid.common.CommonApplication;
 import com.wxandroid.common.http.Stateful;
 import com.wxandroid.common.mvp.BasePresenter;
+import com.wxandroid.common.mvp.IView;
 import com.wxandroid.common.widget.LoadingPage;
 
 import javax.inject.Inject;
@@ -24,7 +27,7 @@ import butterknife.Unbinder;
 /**
  * Created by wenxin
  */
-public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragment implements Stateful {
+public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragment implements Stateful, IView {
     @Inject
     protected P mPresenter;
 
@@ -36,13 +39,21 @@ public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragm
 
     NestedScrollView mScrollView;
 
-
-    private boolean mIsVisible = false;     // fragment是否显示了
+    private boolean mIsVisible = false;//fragment是否显示了
 
     private boolean isPrepared = false;
 
     private boolean isFirst = true; //只加载一次界面
 
+    private Context mContext;
+    private BaseActivity mActivity;
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        mContext = activity;
+        mActivity = (BaseActivity) activity;
+    }
 
     @Nullable
     @Override
@@ -161,5 +172,35 @@ public abstract class LoadingBaseFragment<P extends BasePresenter> extends Fragm
             mLoadingPage.state = state;
             mLoadingPage.showPage();
         }
+    }
+
+    @Override
+    public void launchActivity(Intent intent) {
+
+    }
+
+    @Override
+    public void killMyself() {
+        mActivity.finish();
+    }
+
+    @Override
+    public void showLoading(String msg) {
+        mActivity.showLoading(msg);
+    }
+
+    @Override
+    public void showLoading(int id) {
+        mActivity.showLoading(id);
+    }
+
+    @Override
+    public void hideLoading() {
+        mActivity.hideLoading();
+    }
+
+    @Override
+    public Context getCtx() {
+        return mContext;
     }
 }

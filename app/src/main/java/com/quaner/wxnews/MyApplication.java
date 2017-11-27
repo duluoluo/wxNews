@@ -4,9 +4,9 @@ package com.quaner.wxnews;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.quaner.wxnews.inject.component.AppComponent;
-import com.quaner.wxnews.inject.component.DaggerAppComponent;
-import com.quaner.wxnews.inject.module.ServiceModule;
+import com.quaner.wxnews.di.component.AppComponent;
+import com.quaner.wxnews.di.component.DaggerAppComponent;
+import com.quaner.wxnews.di.module.ServiceModule;
 import com.wxandroid.common.CommonApplication;
 
 /**

@@ -3,7 +3,7 @@ package com.quaner.wxnews.mvp.presenter;
 
 import com.quaner.wxnews.mvp.contract.AndroidContract;
 import com.quaner.wxnews.mvp.model.AndroidModel;
-import com.quaner.wxnews.mvp.ui.entity.GankEntity;
+import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.http.Callback;
 import com.wxandroid.common.http.HttpResult;
 import com.wxandroid.common.mvp.BasePresenter;
@@ -29,7 +29,7 @@ public class AndroidPresenter extends BasePresenter<AndroidModel, AndroidContrac
 
     public void getAndroidDatas(String type, int page, final int flag) {
 
-        LoadingInvoke(mModel.getAndroidData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
+        invoke(mModel.getAndroidData(type, page), new Callback<HttpResult<List<GankEntity>>>() {
             @Override
             protected void subscribe(Disposable d) {
                 addSubscribe(d);
