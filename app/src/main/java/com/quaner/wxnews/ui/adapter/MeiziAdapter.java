@@ -31,7 +31,7 @@ public class MeiziAdapter extends BaseQuickAdapter<GankEntity, BaseViewHolder> {
         Glide.with(mContext).load(item.getUrl())
                 .override(item.getItemWidth(), item.getItemHeight())
                 .placeholder(R.color.white)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .into(imageView);
     }
 }

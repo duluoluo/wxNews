@@ -6,8 +6,7 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp">
-
-
+    
     <com.wxandroid.common.widget.ScaleImageView
         android:id="@+id/iv_photo"
         android:layout_width="wrap_content"

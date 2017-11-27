@@ -41,7 +41,7 @@ public class IosAdapter extends BaseQuickAdapter<GankEntity, BaseViewHolder> {
         if (!AppUtils.isEmpty(images) && !TextUtils.isEmpty(images.get(0))) {
             Glide.with(mContext).load(images.get(0))
                     .placeholder(R.mipmap.bg_other)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     .centerCrop()
                     .crossFade()
                     .into(imageView);

@@ -75,6 +75,7 @@ public class MeiziPresenter extends BasePresenter<MeiZiModel, MeiZiContract.View
                 .doOnNext(new Consumer<GankEntity>() {
                     @Override
                     public void accept(@NonNull final GankEntity zi) throws Exception {
+                        zi.setUrl(zi.getUrl() + "?imageView2/0/w/600");
                         Bitmap bitmap = ImageLoader.loadImageBitmap(zi.getUrl(),
                                 CommonApplication.getContext());
                         if (bitmap != null) {
@@ -87,7 +88,7 @@ public class MeiziPresenter extends BasePresenter<MeiZiModel, MeiZiContract.View
                 .subscribe(new Observer<GankEntity>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        addSubscribe(d);
                     }
 
                     @Override

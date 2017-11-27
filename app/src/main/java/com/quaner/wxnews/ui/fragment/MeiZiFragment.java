@@ -103,6 +103,7 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
             mAdapter = new MeiziAdapter(results);
             mAdapter.setNewData(results);
             mAdapter.setEnableLoadMore(false);
+            mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
             mAdapter.setOnLoadMoreListener(this, rlContent);
             mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
                 @Override
