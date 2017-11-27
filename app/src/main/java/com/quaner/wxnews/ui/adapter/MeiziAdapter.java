@@ -27,8 +27,9 @@ public class MeiziAdapter extends BaseQuickAdapter<GankEntity, BaseViewHolder> {
     protected void convert(BaseViewHolder helper, final GankEntity item) {
         final CardView cardView = helper.getView(R.id.cardView);
         final ScaleImageView imageView = helper.getView(R.id.iv_photo);
-        imageView.setOriginalSize(item.getItemWidth(),item.getItemHeight());
+        imageView.setOriginalSize(item.getItemWidth(), item.getItemHeight());
         Glide.with(mContext).load(item.getUrl())
+                .override(item.getItemWidth(), item.getItemHeight())
                 .placeholder(R.color.white)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageView);

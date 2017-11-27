@@ -6,7 +6,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
@@ -25,6 +24,7 @@ import com.wxandroid.common.base.LoadingBaseFragment;
 import com.wxandroid.common.utils.Constants;
 import com.wxandroid.common.utils.SpaceItemDecoration;
 import com.wxandroid.common.widget.ScaleImageView;
+import com.wxandroid.common.widget.XRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
 
     private static final int MAX_PAGE = 10;
     @BindView(R.id.rl_content)
-    RecyclerView rlContent;
+    XRecyclerView rlContent;
     @BindView(R.id.srl)
     SwipeRefreshLayout srl;
 
@@ -101,7 +101,6 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
             rlContent.setLayoutManager(staggeredGridLayoutManager);
             rlContent.setItemAnimator(new DefaultItemAnimator());
             mAdapter = new MeiziAdapter(results);
-            mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
             mAdapter.setNewData(results);
             mAdapter.setEnableLoadMore(false);
             mAdapter.setOnLoadMoreListener(this, rlContent);
@@ -129,6 +128,7 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
 
         }
     }
+
 
     @Override
     protected int getLayoutId() {

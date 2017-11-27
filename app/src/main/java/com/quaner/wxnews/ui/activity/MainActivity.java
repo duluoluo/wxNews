@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private int[] mImageArray;
     private int[] mColorArray;
     private List<Fragment> mFragments = new ArrayList();
-    private final String[] mTitles = {"妹纸", "Android", "iOS"};
+    private final String[] mTitles = {"小姐姐", "Android", "iOS"};
 
     @Override
     protected void init() {
