@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.quaner.wxnews.MyApplication;
@@ -24,7 +23,6 @@ import com.quaner.wxnews.ui.adapter.MeiziAdapter;
 import com.quaner.wxnews.ui.entity.GankEntity;
 import com.wxandroid.common.base.LoadingBaseFragment;
 import com.wxandroid.common.utils.Constants;
-import com.wxandroid.common.utils.LogUtils;
 import com.wxandroid.common.utils.SpaceItemDecoration;
 import com.wxandroid.common.widget.ScaleImageView;
 
@@ -102,7 +100,6 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
             staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
             rlContent.setLayoutManager(staggeredGridLayoutManager);
             rlContent.setItemAnimator(new DefaultItemAnimator());
-            rlContent.addOnScrollListener(new ImageAutoLoadScrollListener());
             mAdapter = new MeiziAdapter(results);
             mAdapter.setNewData(results);
             mAdapter.setEnableLoadMore(false);
@@ -184,46 +181,5 @@ public class MeiZiFragment extends LoadingBaseFragment<MeiziPresenter>
     @Override
     public void onPause() {
         super.onPause();
-    }
-
-    //监听滚动来对图片加载进行判断处理
-    public class ImageAutoLoadScrollListener extends RecyclerView.OnScrollListener {
-
-        @Override
-        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-            super.onScrolled(recyclerView, dx, dy);
-        }
-
-        @Override
-        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-            super.onScrollStateChanged(recyclerView, newState);
-            LogUtils.e("onScrollStateChanged");
-            switch (newState) {
-                case RecyclerView.SCROLL_STATE_IDLE: // The RecyclerView is not currently scrolling.
-                    //当屏幕停止滚动，加载图片
-                    try {
-                        if (getContext() != null) Glide.with(getContext()).resumeRequests();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    break;
-                case RecyclerView.SCROLL_STATE_DRAGGING: // The RecyclerView is currently being dragged by outside input such as user touch input.
-                    //当屏幕滚动且用户使用的触碰或手指还在屏幕上，停止加载图片
-                    try {
-                        if (getContext() != null) Glide.with(getContext()).pauseRequests();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    break;
-                case RecyclerView.SCROLL_STATE_SETTLING: // The RecyclerView is currently animating to a final position while not under outside control.
-                    //由于用户的操作，屏幕产生惯性滑动，停止加载图片
-                    try {
-                        if (getContext() != null) Glide.with(getContext()).pauseRequests();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    break;
-            }
-        }
     }
 }

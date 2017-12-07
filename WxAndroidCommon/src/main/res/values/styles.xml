@@ -11,11 +11,6 @@
         <item name="alertDialogTheme">@style/AppThemeDialogAlert</item>
     </style>
 
-    <style name="AppSplash" parent="AppTheme">
-        <item name="android:windowBackground">@mipmap/bg</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
     <style name="AppThemeDialogAlert" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorPrimary">@color/main_color</item>
         <item name="colorPrimaryDark">@color/main_color</item>
