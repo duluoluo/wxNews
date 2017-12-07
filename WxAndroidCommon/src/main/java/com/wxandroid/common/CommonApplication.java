@@ -5,8 +5,6 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 
-import com.wxandroid.common.di.component.BaseComponent;
-import com.wxandroid.common.di.component.DaggerBaseComponent;
 import com.wxandroid.common.di.module.AppModule;
 import com.wxandroid.common.di.module.HttpModule;
 
@@ -25,7 +23,6 @@ public class CommonApplication extends Application {
     private static List<Activity> activityList = new LinkedList<Activity>();
     private HttpModule httpModule;
     private AppModule mAppModule;
-    private BaseComponent baseComponent;
 
     @Override
     public void onCreate() {
@@ -36,12 +33,6 @@ public class CommonApplication extends Application {
         //提供application
         mAppModule = new AppModule(this);
         httpModule = new HttpModule();
-        baseComponent = DaggerBaseComponent
-                .builder()
-                .appModule(mAppModule)
-                .build();
-
-        baseComponent.inject(this);
         mContext = getApplicationContext();
 
     }

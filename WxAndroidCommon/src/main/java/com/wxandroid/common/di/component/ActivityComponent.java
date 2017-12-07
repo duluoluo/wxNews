@@ -8,7 +8,7 @@ import com.wxandroid.common.di.scope.ActivityScope;
 import dagger.Component;
 
 @ActivityScope
-@Component(dependencies = BaseComponent.class, modules = ActivityModule.class)
+@Component(modules = ActivityModule.class)
 public interface ActivityComponent {
     Activity getActivity();
 }
