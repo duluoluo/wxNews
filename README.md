@@ -8,6 +8,3 @@
 
 ## 二维码下载
 ![](https://github.com/yangwenxin/wxNews/blob/master/wxNewsDownload.png)
-
-## License
-MIT License
